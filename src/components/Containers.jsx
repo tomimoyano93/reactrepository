@@ -7,8 +7,8 @@ export default function ItemContainer(){
         alert(`La cantidad agregada es ${total}`)
     }
     return (   
-        <card class="fondoItem2"> 
-            <Card.Img class="imgProducto"variant ="top" src="assets/img/gorras.png"/>
+        <card className="fondoItem2"> 
+            <Card.Img className="imgProducto" variant ="top" src="assets/img/gorras.png"/>
             <Card.Body>
                 <Card.Title>Producto</Card.Title>
                 <Card.Text> Descripcion del Producto </Card.Text>

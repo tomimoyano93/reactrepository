@@ -1,10 +1,11 @@
-const ItemList = (props) => {
+/*import productos from "./Item"
+
+const ItemList = () => {
  
     return(
-        <div>
-        <h2>aca van las props</h2>
-        </div>
-    )
+        <>
+       product.map(prod=><div key={prod.id}
+    </>)
 }
 
-export default ItemList
+export default ItemList*/

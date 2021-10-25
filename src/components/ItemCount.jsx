@@ -9,12 +9,12 @@ export default function ItemCount({stock,initial, onAdd}){
     }
 
     const aumentarClick = () => {
-        contador < parseInt(stock) ? setContador(contador+1) : alert(`La cantidad elegida es ${stock}`)
+        contador <stock ? setContador(contador+1) : alert(`La cantidad elegida es ${stock}`)
     }
 
     return(
         <div>
-            <InputGroup classname="mb-3">
+            <InputGroup className="mb-3">
                 <Button variant="outline-primary" onClick={disminuiClick} disabled={contador < 1}> - </Button>
                 <FormControl value={contador}/>
                 <Button onClick={aumentarClick}> + </Button>
