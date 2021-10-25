@@ -4,8 +4,6 @@ import {Button,InputGroup,FormControl } from "react-bootstrap";
 export default function ItemCount({stock,initial, onAdd}){
     const[contador,setContador] = useState(initial);
 
-
-
     const disminuiClick=() => {
         contador > 1 ? setContador(contador-1) : alert("No es posible elegir menos que 1") 
     }
