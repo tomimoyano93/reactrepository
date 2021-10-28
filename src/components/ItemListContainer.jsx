@@ -32,53 +32,43 @@ const ItemListContainer = () => {
 export default ItemListContainer*/
 
 import {useEffect, useState} from 'react'
-import { getFetch } from './services/Item'
+import { getFetch } from './services/GetFetch'
 import ItemCount from './ItemCount'
+import ItemList from './ItemList'
+import { useParams } from 'react-router';
 
 const Promesa = () => {
     const [product, setProduct] = useState([])
     const [loading, setLoading] = useState(true)
 
-    useEffect(() => {
-        getFetch
-        .then( res => {        
-            console.log('llamada a api') // alguna accion con la respuesta  
-            setProduct(res)
-        })    
-        .catch(err => console.log(err))
-        .finally(()=> setLoading(false))
-       
-       
-    },[])   
+    const {id} = useParams()
 
-    const handleClick =(total) => {
-        alert(`La cantidad agregada es ${total}`)
-    }
-  
- 
-    console.log(product)
+    useEffect(() => {
+        if(id){
+            getFetch
+            .then( res => {        
+                console.log('llamada a api') // alguna accion con la respuesta  
+                setProduct(res.filter(prod => prod.categoria ===id))
+            })    
+            .catch(err => console.log(err))
+            .finally(()=> setLoading(false))
+        }else{
+        getFetch
+            .then( res => {        
+                console.log('llamada a api') // alguna accion con la respuesta  
+                setProduct(res)
+            })    
+            .catch(err => console.log(err))
+            .finally(()=> setLoading(false))
+        }
+       
+    },[id])   
+
+    console.log(id)
     return (
         <>
            <h2 className="fondoItem">Productos</h2>          
-            
-            { loading ? <h1 className="nombresProductos" >Cargando...</h1> :         
-                    product.map(prod=> <div key={prod.id} className="card w-50 mt-5 nombresProductos" >
-                                                <div className="card-header nombresProductos">
-                                                    {prod.name}
-                                                </div>
-                                                <div className="card-body">
-                                                    <img src={prod.foto} alt='' />
-                                                </div>
-                                                <div className="card-body">
-                                                </div>
-                                                {prod.price}
-                                                <div className="card-footer">
-                                                <ItemCount stock={prod.stock} initial={prod.initial} onAdd={handleClick}/>
-                                                </div>
-                    
-                                          </div>
-            )
-            }
+            {loading ? <h1 className="nombresProductos" >Cargando...</h1> : <ItemList product ={product}/>  }      
         </>
     )
 }

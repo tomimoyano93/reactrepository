@@ -1,11 +1,10 @@
-/*import productos from "./Item"
+import Item from "./Item"
 
-const ItemList = () => {
+const ItemList = ({product}) => {
  
     return(
-        <>
-       product.map(prod=><div key={prod.id}
-    </>)
+       product.map(prod => <Item key={prod.id} prod={prod}/>)
+        )
 }
 
-export default ItemList*/
+export default ItemList
