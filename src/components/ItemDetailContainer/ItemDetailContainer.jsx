@@ -16,7 +16,8 @@ const [prod, setProd] = useState({})
 console.log(prod)
     return (
         <>
-            <ItemDetail/>
+        <ItemDetail data={prod}/>
+            
         </>
     )
 }
