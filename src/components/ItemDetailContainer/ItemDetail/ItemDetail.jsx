@@ -10,8 +10,12 @@ const ItemDetail = (props) => {
    
     return (
        <div>
-           {data.map(value=> <div><h2 style={{color:'white'}}> {value.name} </h2></div>)}
-           <h1 style={{color:'white'}}>aca estoy</h1>
+           {data.map(value=> 
+            <>
+                <h2>{value.name}</h2>
+            </>
+           )}
+           
            
        </div>
         
