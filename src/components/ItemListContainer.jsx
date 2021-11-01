@@ -48,7 +48,7 @@ const Promesa = () => {
             getFetch
             .then( res => {        
                 console.log('llamada a api') // alguna accion con la respuesta  
-                setProduct(res.filter(prod => prod.categoria ===id))
+                setProduct(res.filter(prod => prod.categoria === id))
             })    
             .catch(err => console.log(err))
             .finally(()=> setLoading(false))

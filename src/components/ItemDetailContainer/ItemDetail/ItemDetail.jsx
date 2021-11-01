@@ -1,12 +1,14 @@
 import {useState} from 'react'
 
-const ItemDetail = () => {
-const [prod, setProd] = useState({})
 
+
+const ItemDetail = () => {
+   
     return (
-        <div>
-            Detalle del item
-        </div>
+       <div>
+           
+       </div>
+        
     )
 }
 

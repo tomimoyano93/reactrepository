@@ -7,8 +7,7 @@ const ItemDetailContainer = () => {
 const [prod, setProd] = useState({})
     useEffect(() => {
         getFetchUnProducto
-        .then( res => {        
-            console.log('llamada a api') // alguna accion con la respuesta  
+        .then( res => {         
             setProd(res)
         })    
         .catch(err => console.log(err))

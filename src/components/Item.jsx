@@ -22,9 +22,7 @@ const Item = ({prod}) => {
                                                 <div className="card-footer">
                                                 <ItemCount stock={prod.stock} initial={prod.initial} onAdd={handleClick}/>
                                                 </div>
-                                                <Link>
-                                                <button to='/detalle'> Detalle del producto</button>
-                                                </Link>
+                                                <Link to='/detalle'> Detalle del producto</Link>
                     
             </div>
         
