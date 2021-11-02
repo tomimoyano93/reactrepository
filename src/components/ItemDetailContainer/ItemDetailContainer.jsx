@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
 import ItemDetail from './ItemDetail/ItemDetail'
-import { getFetchUnProducto } from '../services/GetFetch'
+import { getFetch } from '../services/GetFetch'
 
 
 const ItemDetailContainer = () => {
@@ -8,7 +8,7 @@ const [prod, setProd] = useState({})
 const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        getFetchUnProducto
+        getFetch
         .then( res => {         
             setProd(res)
         })    
@@ -18,8 +18,10 @@ const [loading, setLoading] = useState(true)
 console.log(prod)
     return (
         <>
-        <h2 className="fondoItem">Detalle</h2>          
+        <h2 className="fondoItem">Detalle</h2> 
+        <div className="bodyList">          
          {loading ? <h1 className="nombresProductos" >Cargando...</h1> : <ItemDetail data={prod}/>  }      
+         </div>
      </>
     )
 }

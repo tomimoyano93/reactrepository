@@ -3,12 +3,12 @@ import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
     return (
-    <div>
-        <li><Link rel="stylesheet" to='/'>Home</Link></li>
-        <li><Link rel="stylesheet" to='/categoria'>Categoria</Link></li>
-        <li><Link rel="stylesheet" to='/categoria/gorras'>Gorras</Link></li>
-        <li><Link rel="stylesheet" to='/categoria/remeras'>Remeras</Link></li>
-        <li><Link rel="stylesheet" to='/'>Cart</Link></li>
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+        <li><Link rel="stylesheet" to='/' class="navbar-brand">Home</Link></li>
+        <li><Link rel="stylesheet" to='/categoria' class="navbar-brand">Categoria</Link></li>
+        <li><Link rel="stylesheet" to='/categoria/gorras' class="navbar-brand">Gorras</Link></li>
+        <li><Link rel="stylesheet" to='/categoria/remeras' class="navbar-brand">Remeras</Link></li>
+        <li><Link rel="stylesheet" to='/' class="navbar-brand">Cart</Link></li>
         <CartWidget/>
         
     </div>

@@ -1,5 +1,5 @@
 .App {
-  text-align: right;
+  text-align: center;
 }
 
 
@@ -41,5 +41,11 @@
 
 .nombresProductos{
   color: black;
-  text-align: center;
+  align-items: center;
+}
+
+.bodyList{
+display: grid;
+grid-template-columns: auto auto;
+margin: 2rem ;
 }

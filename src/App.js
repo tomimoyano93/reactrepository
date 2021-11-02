@@ -10,17 +10,16 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
         <BrowserRouter>
-        <NavBar/>
-            <Switch> 
-              <Route exact path='/'>
-                <ItemListContainer/>
-              </Route>
-              <Route path='/categoria/:idCategoria' component={ItemListContainer}/>
-              <Route exact path='/detalle' component={ItemDetailContainer}/>
-              <Route exact path='/cart' component={Cart}/>
-            </Switch>
+          <NavBar/>
+          <Switch> 
+            <Route exact path='/'>
+              <ItemListContainer/>
+            </Route>
+            <Route exact path='/categoriaId' component={ItemListContainer}/>
+            <Route exact path='/detalle' component={ItemDetailContainer}/>
+            <Route exact path='/cart' component={Cart}/>
+          </Switch>
         </BrowserRouter>
       </header>
     </div>

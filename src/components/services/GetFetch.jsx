@@ -2,27 +2,27 @@
 const productos = [
     {
       id: 1,
-      name: 'Gorra',
+      name: 'Remera',
       description: 'Bucket',
       price: '$500',
       stock: 5,
       initial: 1,
-      foto:'assets/img/gorras.png',
+      foto:'assets/img/remera.jpg',
       categoria: 'remeras'
     },
     {
       id: 2,
-      name: 'Gorra2',
+      name: 'Remera2',
       description: 'Panama',
       price: '$500',
       stock: 8,
       initial: 1,
-      foto:'assets/img/gorras.png',
+      foto:'assets/img/remera.jpg',
       categoria: 'remeras'
     },
     {
       id: 3,
-      name: 'Gorra3',
+      name: 'Gorra1',
       description: 'Fedora',
       price: '$500',
       stock: 15,
@@ -32,7 +32,7 @@ const productos = [
     },
     {
       id: 4,
-      name: 'Gorra4',
+      name: 'Gorra2',
       description: 'Fedora',
       price: '$500',
       stock: 15,

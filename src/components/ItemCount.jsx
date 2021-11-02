@@ -9,7 +9,7 @@ export default function ItemCount({stock,initial, onAdd}){
     }
 
     const aumentarClick = () => {
-        contador <stock ? setContador(contador+1) : alert(`La cantidad elegida es ${stock}`)
+        contador < stock ? setContador(contador+1) : alert(`La cantidad elegida es ${stock}`)
     }
 
     return(

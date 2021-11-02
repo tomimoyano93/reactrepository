@@ -20,7 +20,7 @@ const ItemListContainer = () => {
     .finally(() => setLoading(false))
 
   }, [])
-  
+
     return (
         <div className="fondoItem">
             <ItemContainer/>
@@ -28,7 +28,7 @@ const ItemListContainer = () => {
         </div>
         )
     }
-    
+
 export default ItemListContainer*/
 
 import {useEffect, useState} from 'react'
@@ -67,8 +67,10 @@ const Promesa = () => {
     console.log(id)
     return (
         <>
-           <h2 className="fondoItem">Productos</h2>          
+        <h2 className="fondoItem">Productos</h2> 
+        <div className="bodyList">    
             {loading ? <h1 className="nombresProductos" >Cargando...</h1> : <ItemList product ={product}/>  }      
+        </div>
         </>
     )
 }
