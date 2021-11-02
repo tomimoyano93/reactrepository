@@ -1,35 +1,3 @@
-/*import { useState, useEffect } from "react";
-import { ThemeConsumer } from "react-bootstrap/esm/ThemeProvider";
-import ItemContainer from './Containers';
-import { getFetch } from "./Item";
-import ItemList from "./ItemList";
-
-
-
-const ItemListContainer = () => {
-  const [product,setProduct] = useState([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    getFetch
-    .then(res =>{
-      console.log('llamada')
-      setProduct(res)
-    })
-    .catch(err => console.log(err))
-    .finally(() => setLoading(false))
-
-  }, [])
-
-    return (
-        <div className="fondoItem">
-            <ItemContainer/>
-            <ItemList/>
-        </div>
-        )
-    }
-
-export default ItemListContainer*/
 
 import {useEffect, useState} from 'react'
 import { getFetch } from './services/GetFetch'

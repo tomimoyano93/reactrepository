@@ -12,7 +12,7 @@ const Item = ({prod}) => {
       <div className="card-body">
         <img src={prod.foto} alt=''width='200px'/>
       </div>
-      <Link to='/detalle'>Detalle del producto</Link>
+      <Link to={`/detalle/${prod.id}`}>Detalle del producto</Link>
 
     </div>
 
