@@ -12,11 +12,11 @@ const ItemDetail = (props) => {
   }
 
   return (
-    <div>
+    <div className="bodyList">
       {data.map(value => <> 
       <div className="card w-50 mt-5 nombresProductos">
         <div className="card-header nombresProductos">
-          {`${value.name} ${value.categoria}`}
+          {`${value.name}`}
         </div>
         <div className="card-body">
           <img src={value.foto} alt='' width='200px'/>
@@ -33,3 +33,12 @@ const ItemDetail = (props) => {
 }
 
 export default ItemDetail
+
+/*    useEffect(() => {
+        getFetch
+        .then( res => {         
+            setProd(res.find(prod => prod.id === productoID))
+        })    
+        .catch(err => alert("Error: ", err))
+        .finally(()=> setLoading(false))
+    },[productoID])*/

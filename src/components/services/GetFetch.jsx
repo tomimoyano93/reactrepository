@@ -2,44 +2,44 @@
 const productos = [
     {
       id: 1,
-      name: 'Remera',
-      description: 'Bucket',
+      name: 'Curso Aleman',
+      description: 'Nivel 1',
       price: '$500',
       stock: 5,
       initial: 1,
-      foto:'assets/img/remera.jpg',
-      categoria: 'remeras'
+      foto:'assets/img/brandemburgo.jpg',
+      categoria: 'Aleman'
     },
     {
       id: 2,
-      name: 'Remera2',
-      description: 'Panama',
+      name: 'Curso Aleman',
+      description: 'Nivel 2',
       price: '$500',
       stock: 8,
       initial: 1,
-      foto:'assets/img/remera.jpg',
-      categoria: 'remeras'
+      foto:'assets/img/brandemburgo.jpg',
+      categoria: 'Aleman'
     },
     {
       id: 3,
-      name: 'Gorra1',
-      description: 'Fedora',
+      name: 'Curso Frances',
+      description: 'Nivel 1',
       price: '$500',
       stock: 15,
       initial: 1,
-      foto:'assets/img/gorras.png',
-      categoria: 'gorras'
+      foto:'assets/img/torreEifel.jpg',
+      categoria: 'Frances'
     },
     {
       id: 4,
-      name: 'Gorra2',
-      description: 'Fedora',
+      name: 'Curso Frances',
+      description: 'Nivel 2',
       price: '$500',
       stock: 15,
       initial: 1,
-      foto:'assets/img/gorras.png',
-      categoria: 'gorras'
-    }
+      foto:'assets/img/torreEifel.jpg',
+      categoria: 'Frances'
+    },
   ];
 
 export const getFetch = new Promise((resolve,reject) => {
@@ -58,6 +58,7 @@ const producto = [
     initial: 1,
     foto:'assets/img/gorras.png'
   },
+  
 ];
 
 export const getFetchUnProducto = new Promise((resolve,reject) => {
