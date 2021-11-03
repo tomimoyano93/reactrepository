@@ -22,3 +22,7 @@ El proyecto aun en construccion cuenta con lo siguientes componentes:
 - ItemDetailContainer: idem ItemListContainer pero usado para ItemDetail
 - ItemDetail: idem Item pero con mas detalle para el consumidor y la opcion de agregarlo al Card
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b387a9f67660152244ad79c3dca72424cd5ce204
