@@ -11,6 +11,18 @@ El objetivo de crear una e-commerce para un instituto de idiomas es el facil acc
 - HTML
 - CSS
 
+
+### Paso a paso para la visualizacion del proyecto 
+ - En Visual Studio Code, esribir 'git clone'y luego pegar la la siguiente URL 'https://github.com/tomimoyano93/reactrepository'
+ - Luego de clonar el repositorio, para poder abrir el proyecto, se deben instalar los siguientes complementos:
+	- reac-router.dom : es una libreria para una mejor navegabilidad. Para instalarla se debe ejecutar:
+	npm install react-router-dom
+ - Una vez instalado el react router dom, lo que deben hacer es ejecutar el siguiente codigo:
+	npm star
+
+El proyecto se ejecutar en modo desarrollo, en un localhost:3000. La pagina tiene actualizacion automatica si se realizar alguna correcion.
+
+
 ### Proyecto
 El proyecto aun en construccion cuenta con lo siguientes componentes:
 - Nav Bar: barra de navegacion
@@ -21,7 +33,6 @@ El proyecto aun en construccion cuenta con lo siguientes componentes:
 - ItemCount: componente creado para el contador de los productos
 - ItemDetailContainer: idem ItemListContainer pero usado para ItemDetail
 - ItemDetail: idem Item pero con mas detalle para el consumidor y la opcion de agregarlo al Card
-
 <<<<<<< HEAD
 =======
 
