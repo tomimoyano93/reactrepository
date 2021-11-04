@@ -2,13 +2,26 @@ import {useState} from 'react'
 import handleClick from '../../Item'
 import ItemCount from '../../ItemCount'
 import {Link} from 'react-router-dom'
+import { useContext } from 'react'
+import { useCartContext } from '../../../context/CartContext'
+
 
 const ItemDetail = (props) => {
+  const [count, setCount] = useState(0)
   const {data} = props
   console.log(data, 'soy data')
 
   const handleClick = (total) => {
     alert(`La cantidad agregada es ${total}`)
+  }
+
+  const {cartList, mostrarListado,agregarAlCarrito} = useCartContext()
+  console.log(cartList);
+  console.log(mostrarListado);
+
+  const onAdd =(cant)=>{
+    setCount(cant)
+    agregarAlCarrito({props,cantidad:cant})
   }
 
   return (
