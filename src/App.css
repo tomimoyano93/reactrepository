@@ -54,3 +54,10 @@ margin: 2rem ;
 align-content: center;
 justify-content: center;
 }
+
+.card{
+  width: 50%;
+}
+.cardInterno{
+  width: 100%;
+}

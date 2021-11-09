@@ -40,6 +40,26 @@ const productos = [
       foto:'assets/img/torreEifel.jpg',
       categoria: 'Frances'
     },
+    {
+      id: 7,
+      name: 'Curso Italiano',
+      description: 'Nivel 1',
+      price: '$700',
+      stock: 15,
+      initial: 1,
+      foto:'assets/img/coliseo.jpg',
+      categoria: 'Italiano'
+    },
+    {
+      id: 8,
+      name: 'Curso Italiano',
+      description: 'Nivel 2',
+      price: '$700',
+      stock: 15,
+      initial: 1,
+      foto:'assets/img/coliseo.jpg',
+      categoria: 'Italiano'
+    },
   ];
 
 export const getFetch = new Promise((resolve,reject) => {

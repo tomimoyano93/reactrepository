@@ -15,7 +15,6 @@ const Promesa = () => {
         if(id){
             getFetch
             .then( res => {        
-                console.log('llamada a api') // alguna accion con la respuesta  
                 setProduct(res.filter(prod => prod.categoria === id))
             })    
             .catch(err => console.log(err))
@@ -23,7 +22,6 @@ const Promesa = () => {
         }else{
         getFetch
             .then( res => {        
-                console.log('llamada a api') // alguna accion con la respuesta  
                 setProduct(res)
             })    
             .catch(err => console.log(err))
@@ -32,7 +30,7 @@ const Promesa = () => {
        
     },[id])   
 
-    console.log(id)
+
     return (
         <>
         <h2 className="fondoItem">Productos</h2> 
