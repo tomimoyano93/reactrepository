@@ -3,13 +3,9 @@ import ItemCount from '../../ItemCount'
 import { useCartContext } from '../../../context/CartContext'
 
 
-
-
-
-
-const ItemDetail = (props) => {
+const ItemDetail = ({props}) => {
   const [count, setCount] = useState(0)
-  const {data} = props
+  
 
   const {cartList, mostrarListado, agregarAlCarrito} = useCartContext()
   //console.log(cartList, 'soy cartList');
@@ -17,27 +13,26 @@ const ItemDetail = (props) => {
 
   const onAdd =(cant)=>{
     setCount(cant)
-    agregarAlCarrito({data, cantidad: cant})
+    agregarAlCarrito({props, cantidad: cant})
   }   
- //console.log(count, data)
+ //console.log(count, props)
 
 
   return (
     <div className="bodyList card">
-      {data.map(value => <> 
       <div className="nombresProductos cardInterno">
         <div className="card-header nombresProductos">
-          {`${value.name}`}
+          {props.name}
         </div>
         <div className="card-body">
-          <img src={value.foto} alt=''width='200px' height='150px'/>
+          <img src={props.foto} alt=''width='200px' height='150px'/>
         </div>
-        <div className="card-body">{value.price}</div>
-        <div className="card-body">{value.description}</div>
+        <div className="card-body">{props.price}</div>
+        <div className="card-body">{props.description}</div>
         <div className="card-footer">
-          <ItemCount stock={value.stock} initial={value.initial} onAdd={onAdd}/>
+          <ItemCount stock={props.stock} initial={props.initial} onAdd={onAdd}/>
         </div>
-      </div> </>)}
+      </div> 
     </div>
 
   )

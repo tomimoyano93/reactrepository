@@ -1,7 +1,7 @@
 
 const productos = [
     {
-      id: 1,
+      id: '1',
       name: 'Curso Aleman',
       description: 'Nivel 1',
       price: '$500',
@@ -11,7 +11,7 @@ const productos = [
       categoria: 'Aleman'
     },
     {
-      id: 2,
+      id: '2',
       name: 'Curso Aleman',
       description: 'Nivel 2',
       price: '$500',
@@ -21,7 +21,7 @@ const productos = [
       categoria: 'Aleman'
     },
     {
-      id: 3,
+      id: '3',
       name: 'Curso Frances',
       description: 'Nivel 1',
       price: '$500',
@@ -31,7 +31,7 @@ const productos = [
       categoria: 'Frances'
     },
     {
-      id: 4,
+      id: '4',
       name: 'Curso Frances',
       description: 'Nivel 2',
       price: '$500',
@@ -41,7 +41,7 @@ const productos = [
       categoria: 'Frances'
     },
     {
-      id: 7,
+      id: '7',
       name: 'Curso Italiano',
       description: 'Nivel 1',
       price: '$700',
@@ -51,7 +51,7 @@ const productos = [
       categoria: 'Italiano'
     },
     {
-      id: 8,
+      id: '8',
       name: 'Curso Italiano',
       description: 'Nivel 2',
       price: '$700',

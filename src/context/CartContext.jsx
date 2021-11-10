@@ -10,7 +10,7 @@ const CartContextProvider = ({children}) =>{
     
     function agregarAlCarrito(items){
         setCartList([
-            ... cartList,
+            ...cartList,
             items
         ])
     }
