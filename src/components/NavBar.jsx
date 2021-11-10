@@ -9,8 +9,7 @@ const NavBar = () => {
         <li><Link rel="stylesheet" to='/categoria/Aleman' class="navbar-brand">Aleman</Link></li>
         <li><Link rel="stylesheet" to='/categoria/Frances' class="navbar-brand">Frances</Link></li>
         <li><Link rel="stylesheet" to='/categoria/Italiano' class="navbar-brand">Italiano</Link></li>
-        
-        <li><Link rel="stylesheet" to='/cart' class="navbar-brand">Cart</Link></li>
+        <li><Link rel="stylesheet" to='/cart' class="navbar-brand">Cart </Link></li>
         <CartWidget/>
     </div>
     )

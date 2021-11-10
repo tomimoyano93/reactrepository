@@ -15,15 +15,31 @@ const CartContextProvider = ({children}) =>{
         ])
     }
 
+    const sumatoriaFinal = () =>{
+       return cartList.reduce((acum,value) => acum + (value.cantidad * value.props.price), 0)  
+    }
+
     const mostrarListado = () =>{
         console.log(cartList)
     }
 
+    const borrarListado = () =>{
+        setCartList([])
+    }
+
+    const borrarItem = (id) =>{
+        setCartList(cartList.filter((prod) => prod.props.id !== id))
+    }
+
+    
     return(
         <CartContext.Provider value ={{
             cartList,
             mostrarListado,
-            agregarAlCarrito
+            agregarAlCarrito,
+            sumatoriaFinal,
+            borrarListado,
+            borrarItem
             }}>
             {children}
         </CartContext.Provider>

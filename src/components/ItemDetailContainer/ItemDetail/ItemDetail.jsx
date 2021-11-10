@@ -14,8 +14,9 @@ const ItemDetail = ({props}) => {
   const onAdd =(cant)=>{
     setCount(cant)
     agregarAlCarrito({props, cantidad: cant})
+    console.log(cant)
   }   
- //console.log(count, props)
+ console.log(count)
 
 
   return (
@@ -27,7 +28,7 @@ const ItemDetail = ({props}) => {
         <div className="card-body">
           <img src={props.foto} alt=''width='200px' height='150px'/>
         </div>
-        <div className="card-body">{props.price}</div>
+        <div className="card-body"> $ {props.price}</div>
         <div className="card-body">{props.description}</div>
         <div className="card-footer">
           <ItemCount stock={props.stock} initial={props.initial} onAdd={onAdd}/>
