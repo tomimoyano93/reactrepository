@@ -7,13 +7,14 @@ const ItemDetail = ({props}) => {
   const [count, setCount] = useState(0)
   
 
-  const {cartList, mostrarListado, agregarAlCarrito} = useCartContext()
+  const {cartList, mostrarListado, agregarAlCarrito, carritoRepetido} = useCartContext()
   //console.log(cartList, 'soy cartList');
   //console.log(mostrarListado);
 
   const onAdd =(cant)=>{
     setCount(cant)
     agregarAlCarrito({props, cantidad: cant})
+    //carritoRepetido()
     console.log(cant)
   }   
  console.log(count)

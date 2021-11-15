@@ -19,6 +19,7 @@ const Cart = () => {
                     <img src={`${value.props.foto}`} alt=''width='200px' height='150px'/>
                 </div>
                 <div className="card-body">$ {`${value.props.price}`}</div>
+                <button onClick={() => borrarItem()}>Eliminar</button>
                 <div className="card-body titulos"> Cantidad: {`${value.cantidad}`} </div>
             </div> 
             </>)}

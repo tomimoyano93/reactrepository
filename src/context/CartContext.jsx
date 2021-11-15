@@ -10,7 +10,7 @@ const CartContextProvider = ({children}) =>{
     
     function agregarAlCarrito(items){
         setCartList([
-            ...cartList,
+            ... cartList,
             items
         ])
     }
@@ -31,6 +31,22 @@ const CartContextProvider = ({children}) =>{
         setCartList(cartList.filter((prod) => prod.props.id !== id))
     }
 
+    const carritoRepetido = (prod) => {
+        setCartList((prev) => {
+          // Search the item in the array
+          const enElCarrito = prev.find((i) => i.props.id === prod.props.id);
+          if (enElCarrito) {
+            return prev.map((i) =>
+              i.id === prod.id ? { ...i, amount: i.amount + 1 } : i
+            );
+          }
+          return [...prev, { ...prod, amount: 1 }];
+        });
+      };
+      
+      const sumatoriaCarrito = () =>{
+        
+      }
     
     return(
         <CartContext.Provider value ={{
@@ -39,7 +55,8 @@ const CartContextProvider = ({children}) =>{
             agregarAlCarrito,
             sumatoriaFinal,
             borrarListado,
-            borrarItem
+            borrarItem,
+            carritoRepetido
             }}>
             {children}
         </CartContext.Provider>
