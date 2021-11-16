@@ -2,6 +2,7 @@ import CartWidget from "./CartWidget"
 import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
+
     return (
     <div class="navbar navbar-expand-lg navbar-light bg-light">
         <img className="logo" src="assets/img/berlin_transparente.png"/>

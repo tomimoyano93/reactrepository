@@ -7,24 +7,23 @@ const ItemDetail = ({props}) => {
   const [count, setCount] = useState(0)
   
 
-  const {cartList, mostrarListado, agregarAlCarrito, carritoRepetido} = useCartContext()
+  const {cartList, mostrarListado, agregarAlCarrito} = useCartContext()
   //console.log(cartList, 'soy cartList');
   //console.log(mostrarListado);
 
   const onAdd =(cant)=>{
     setCount(cant)
     agregarAlCarrito({props, cantidad: cant})
-    //carritoRepetido()
     console.log(cant)
   }   
- console.log(count)
+ console.log(props, 'propss')
 
 
   return (
     <div className="bodyList card">
       <div className="nombresProductos cardInterno">
         <div className="card-header nombresProductos">
-          {props.name}
+        {`${props.name} ${props.description}`}
         </div>
         <div className="card-body">
           <img src={props.foto} alt=''width='200px' height='150px'/>

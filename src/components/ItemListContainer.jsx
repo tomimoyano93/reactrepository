@@ -4,6 +4,7 @@ import { getFetch } from './services/GetFetch'
 import ItemCount from './ItemCount'
 import ItemList from './ItemList'
 import { useParams } from 'react-router';
+import { getFirestore  } from '../../src/components/services/getFirestore'
 
 const Promesa = () => {
     const [product, setProduct] = useState([])
@@ -12,6 +13,11 @@ const Promesa = () => {
     const {id} = useParams()
 
     useEffect(() => {
+       /* const db = getFirestore()
+    const dbQuery = db.collection('items').get()
+    dbQuery
+    .then(resp => setProduct(resp.docs.map(prod => ({id: prod.id, ...prod.data()}))))
+*/
         if(id){
             getFetch
             .then( res => {        
@@ -35,7 +41,7 @@ const Promesa = () => {
         <>
         <h2 className="fondoItem">Productos</h2> 
         <div className="bodyList">    
-            {loading ? <h1 className="nombresProductos" >Cargando...</h1> : <ItemList product ={product}/>  }      
+             <ItemList product ={product}/>       
         </div>
         </>
     )
