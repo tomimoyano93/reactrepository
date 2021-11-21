@@ -9,13 +9,13 @@ const CartContextProvider = ({children}) =>{
     
     
 const agregarAlCarrito = (props, quantity) =>{
-        const index = cartList.findIndex(i => i.props.id === props.id)
+        const index = cartList.find(i => i.props.id === props.id)
         console.log(index,'cart')
-        if(index > -1){
+        if(index > 1){
              const oldQy = cartList[index].quantity
+             console.log(oldQy,'old')
              cartList.splice(index, 1)
              setCartList([...cartList, {props, quantity: quantity + oldQy}])
-            
         }else{
             setCartList([...cartList, props])}
     }

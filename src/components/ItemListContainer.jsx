@@ -13,12 +13,22 @@ const Promesa = () => {
     const {id} = useParams()
 
     useEffect(() => {
-       /* const db = getFirestore()
-    const dbQuery = db.collection('items').get()
+       const db = getFirestore()
+       if(id){
+    const dbQuery = db.collection('items').where('categoria', '==', id).get()
     dbQuery
     .then(resp => setProduct(resp.docs.map(prod => ({id: prod.id, ...prod.data()}))))
-*/
-        if(id){
+    .catch(err => console.log(err))
+    .finally(()=> setLoading(false))
+    }else{
+        const dbQuery = db.collection('items').get()
+    dbQuery
+    .then(resp => setProduct(resp.docs.map(prod => ({id: prod.id, ...prod.data()}))))
+    .catch(err => console.log(err))
+    .finally(()=> setLoading(false))
+    }
+        /*
+         if(id){
             getFetch
             .then( res => {        
                 setProduct(res.filter(prod => prod.categoria === id))
@@ -33,15 +43,17 @@ const Promesa = () => {
             .catch(err => console.log(err))
             .finally(()=> setLoading(false))
         }
-       
+       */
     },[id])   
 
 
     return (
         <>
         <h2 className="fondoItem">Productos</h2> 
-        <div className="bodyList">    
-             <ItemList product ={product}/>       
+        <div className="bodyList"> {loading? 
+            <h1 className="nombresProductos">Cargando...</h1>
+            : 
+            <ItemList product ={product}/>  }  
         </div>
         </>
     )

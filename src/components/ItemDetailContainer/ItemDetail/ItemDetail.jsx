@@ -4,8 +4,8 @@ import { useCartContext } from '../../../context/CartContext'
 
 
 const ItemDetail = ({props}) => {
-  const [count, setCount] = useState(0)
-  
+  const [count, setCount] = useState()
+  console.log(props,'props')
 
   const {cartList, mostrarListado, agregarAlCarrito} = useCartContext()
   //console.log(cartList, 'soy cartList');
@@ -14,9 +14,8 @@ const ItemDetail = ({props}) => {
   const onAdd =(cant)=>{
     setCount(cant)
     agregarAlCarrito({props, cantidad: cant})
-    console.log(cant)
   }   
- console.log(props, 'propss')
+ 
 
 
   return (
