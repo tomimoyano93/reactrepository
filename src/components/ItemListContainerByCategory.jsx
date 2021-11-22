@@ -1,29 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import { getFirestore } from '../../src/components/services/getFirestore';
+import { useParams } from 'react-router';
+import { getFirestore } from './services/getFirestore';
 import Item from "./Item"
 
-const ItemListContainer = () => {
+const ItemListContainerByCategory = () => {
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState([]);
   const db = getFirestore();
+  const { id } = useParams()
 
   useEffect(() => {
-    if (db) {
-      const dbQuery = db.collection('items').get()
+    if (db && id) {
+      const dbQuery = db.collection('items').where('categoria', '==', id).get()
       dbQuery
         .then(resp => setProduct(resp.docs.map(prod => ({ ...prod.data() }))))
         .catch(err => console.log(err))
         .finally(() => setLoading(false))
     }
-  }, [db])
-
-  useEffect(() => {
-    console.log(product)
-  }, [product])
+  }, [db, id])
 
   return (
     <div>
-      <h2 className="fondoItem">Productos</h2>
+      <h2 className="fondoItem">Productos x Categoria</h2>
       <div className="bodyList">
         {loading
           ? <h1 className="nombresProductos">Cargando...</h1>
@@ -41,4 +39,4 @@ const ItemListContainer = () => {
   );
 };
 
-export default ItemListContainer;
+export default ItemListContainerByCategory;
