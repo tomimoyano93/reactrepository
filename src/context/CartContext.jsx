@@ -6,9 +6,9 @@ const CartContextProvider = ({children}) => {
   const [cartList,setCartList] = useState([])
 
   const agregarAlCarrito = (props) => {
-    const isInCart = cartList.find(prod=> prod.props.id === prod.id)
-    if(isInCart > -1){
-
+    const isInCart = cartList.find(prod=> prod.props.id === props.props.id)
+    if(isInCart){
+      isInCart.cantidad += props.cantidad
     }else{
         setCartList([
             ...cartList,
@@ -31,10 +31,10 @@ const CartContextProvider = ({children}) => {
   }
 
   const borrarItem = (id) => {
-    setCartList(cartList.filter((prod) => prod.id !== id))
+    
+    setCartList(cartList.filter(prod => prod.props.id !== id))
     console.log(id)
 }
-
 
   return (
     <CartContext.Provider
