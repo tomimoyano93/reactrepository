@@ -66,7 +66,7 @@ const Cart = () => {
      }
  
 
-    const {cartList, sumatoriaFinal, borrarItem, borrarListado} = useCartContext()
+    const {cartList, sumatoriaFinal, borrarItem, borrarListado,cantidadCarrito} = useCartContext()
     
       
     return (
@@ -93,17 +93,18 @@ const Cart = () => {
                     {`Total: $ ${sumatoriaFinal()}`}
                 </div>
                 <button onClick={() => borrarListado()}>Eliminar</button>
-            </div>
-            <form onSubmit={generarOrden} onChange={handleChange}>
+                <form onSubmit={generarOrden} onChange={handleChange}>
                 <input type='text' name='name' placeholder='name' value={formData.name}/>
                 <input type='text' name='phone'placeholder='tel' value={formData.phone}/>
                 <input type='email' name='email'placeholder='email' value={formData.email}/>
                 <button >Enviar</button>
             </form>
+            </div>
+            
 
         </div>
     )
 }
 
 export default Cart
-
+/**/

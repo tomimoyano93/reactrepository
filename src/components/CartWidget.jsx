@@ -1,7 +1,13 @@
+import { useCartContext } from '../context/CartContext';
+import React from 'react';
+
 const CartWidget = () => {
+    const { cantidadCarrito } = useCartContext()
     return (
-    <img className="carritoNav" src="assets/img/carrito.png"/>
-    
+        <div>
+            <img className="carritoNav" src="assets/img/carrito.png"/>
+            <div className="card-body navbar-brand">{`${cantidadCarrito()}`}</div>
+        </div>
     )
 }
     

@@ -14,12 +14,15 @@ const CartContextProvider = ({children}) => {
             ...cartList,
             props
         ])
-
-    }
+      }
   }
 
   const sumatoriaFinal = () => {
     return cartList.reduce((acum, value) => acum + (value.cantidad * value.props.price), 0)
+  }
+
+  const cantidadCarrito = () => {
+    return cartList.reduce((acum, value) => acum + value.cantidad , 0)
   }
 
   const mostrarListado = () => {
@@ -31,7 +34,6 @@ const CartContextProvider = ({children}) => {
   }
 
   const borrarItem = (id) => {
-    
     setCartList(cartList.filter(prod => prod.props.id !== id))
     console.log(id)
 }
@@ -44,7 +46,8 @@ const CartContextProvider = ({children}) => {
       agregarAlCarrito,
       sumatoriaFinal,
       borrarListado,
-      borrarItem
+      borrarItem,
+      cantidadCarrito
     }}>
       {children}
     </CartContext.Provider>
