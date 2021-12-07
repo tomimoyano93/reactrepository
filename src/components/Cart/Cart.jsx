@@ -8,13 +8,14 @@ import {getFirestore} from '../services/getFirestore'
 
 
 const Cart = () => {
-    const [idOrder, setIdOrder] = useState('')
-
+    const [idOrder, setIdOrder] = useState('') 
     const [formData, setFormData] = useState({
         name:'',
         phone:'',
         email: ''
     })
+    const {cartList, sumatoriaFinal, borrarItem, borrarListado} = useCartContext()
+
     const generarOrden = (e) =>{
         e.preventDefault()        
         let orden = {}
@@ -22,11 +23,11 @@ const Cart = () => {
         orden.buyer = formData
         orden.total = sumatoriaFinal();
         orden.items = cartList.map(cartItem => {
-            const id = cartItem.id;
-            const nombre = cartItem.nombre;
-            const precio = cartItem.precio * cartItem.cantidad;
+            const id = cartItem.props.id;
+            const name = cartItem.props.name;
+            const price = cartItem.props.price * cartItem.cantidad;
             
-            return {id, nombre, precio}   
+            return {id, name, price}   
         })
         
         const dbQuery = getFirestore()
@@ -38,15 +39,15 @@ const Cart = () => {
             phone:'',
             email: ''
         }))
-    
+    /*
     const itemsToUpdate = dbQuery.collection('items').where(
         firebase.firestore.FieldPath.documentId(), 'in', cartList.map(i=> i.id)
     )
-
+        
     const batch = dbQuery.batch();
     
     itemsToUpdate.get()
-    .then( collection=>{
+    .then(collection=>{
         collection.docs.forEach(docSnapshot => {
             batch.update(docSnapshot.ref, {
                 stock: docSnapshot.data().stock - cartList.find(item => item.id === docSnapshot.id).cantidad
@@ -56,7 +57,7 @@ const Cart = () => {
         batch.commit().then(res =>{
             console.log('resultado batch:', res)
         })
-    })}
+    })*/}
 
     const handleChange=(e)=>{
         setFormData({
@@ -65,14 +66,14 @@ const Cart = () => {
          })
      }
  
-
-    const {cartList, sumatoriaFinal, borrarItem, borrarListado,cantidadCarrito} = useCartContext()
+console.log(cartList)
+    
     
       
     return (
         <div className="bodyList card">
             <section>
-                {idOrder!==''&& <label>El id de su orden es : {idOrder}</label>}
+                {idOrder !==''&& <label className="nombresProductos"> El id de su orden es : {idOrder}</label>}
             </section>
             {cartList.map((value) => <> 
             <div className="nombresProductos cardInterno">
