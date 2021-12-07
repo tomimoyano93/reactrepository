@@ -72,37 +72,51 @@ console.log(cartList)
       
     return (
         <div className="bodyList card">
-            <section>
-                {idOrder !==''&& <label className="nombresProductos"> El id de su orden es : {idOrder}</label>}
-            </section>
-            {cartList.map((value) => <> 
-            <div className="nombresProductos cardInterno">
-                <div className="card-header nombresProductos">
-                {`${value.props.name}`} - 
-                {`${value.props.description}`}
-                </div>
-                <div className="card-body">
-                    <img src={`${value.props.foto}`} alt=''width='200px' height='150px'/>
-                </div>
-                <div className="card-body">$ {`${value.props.price}`}</div>
-                <button onClick={() => borrarItem(value.props.id)}>Eliminar</button>
-                <div className="card-body titulos"> Cantidad: {`${value.cantidad}`} </div>
-            </div> 
-            </>)}
             <div>
-                <div className='titulos'>
-                    {`Total: $ ${sumatoriaFinal()}`}
+            {cartList.length === 0  ?
+                <div>
+                    <h1 className="nombresProductos">No has seleccionado ningun libro!</h1>
+                    Hace click 
+                    <Link to="/" >
+                        Acá
+                    </Link>
+                    y selecciona uno !
                 </div>
-                <button onClick={() => borrarListado()}>Eliminar</button>
-                <form onSubmit={generarOrden} onChange={handleChange}>
-                <input type='text' name='name' placeholder='name' value={formData.name}/>
-                <input type='text' name='phone'placeholder='tel' value={formData.phone}/>
-                <input type='email' name='email'placeholder='email' value={formData.email}/>
-                <button >Enviar</button>
-            </form>
-            </div>
-            
-
+                : 
+                <div>
+                {cartList.map((value) => <> 
+                <div className="nombresProductos cardInterno">
+                    <div className="card-header nombresProductos">
+                    {`${value.props.name}`} - 
+                    {`${value.props.description}`}
+                    </div>
+                    <div className="card-body">
+                        <img src={`${value.props.foto}`} alt=''width='200px' height='150px'/>
+                    </div>
+                    <div className="card-body">$ {`${value.props.price}`}</div>
+                    <button onClick={() => borrarItem(value.props.id)}>Eliminar</button>
+                    <div className="card-body titulos"> Cantidad: {`${value.cantidad}`} </div>
+                </div> 
+                </>)}
+                
+                <div>
+                    <div className='titulos'>
+                        {`Total: $ ${sumatoriaFinal()}`}
+                    </div>
+                    <button onClick={() => borrarListado()}>Eliminar</button>
+                    <section>
+                        {idOrder !==''&& <label className="nombresProductos"> El id de su orden es : {idOrder}</label>}
+                    </section>
+                    <form onSubmit={generarOrden} onChange={handleChange}>
+                        <input type='text' name='name' placeholder='name' value={formData.name}/>
+                        <input type='text' name='phone'placeholder='tel' value={formData.phone}/>
+                        <input type='email' name='email'placeholder='email' value={formData.email}/>
+                        <button >Enviar</button>
+                    </form>
+                    
+                </div>
+                </div>
+            } </div>
         </div>
     )
 }
